@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Анкета Опитування (Віддалена Робота)</title>
+    <style>
+        /* Стилі для кращого вигляду */
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input[type="text"], input[type="email"] { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; box-sizing: border-box; }
+        .question { margin-bottom: 20px; border-left: 3px solid #007bff; padding-left: 10px; }
+        input[type="submit"] { background-color: #007bff; color: white; padding: 10px 15px; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Анкета: Ваше Ставлення до Віддаленої Роботи</h1>
+    
+    <form action="submit_survey.php" method="POST"> 
+        
+        <label for="name">Ваше Ім'я:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Ваш Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <hr>
+
+        <div class="question">
+            <p><strong>1. Як часто ви працюєте віддалено?</strong></p>
+            <input type="radio" id="q1_1" name="q1_frequency" value="Щодня" required>
+            <label for="q1_1">Щодня</label><br>
+            <input type="radio" id="q1_2" name="q1_frequency" value="Кілька разів на тиждень">
+            <label for="q1_2">Кілька разів на тиждень</label><br>
+            <input type="radio" id="q1_3" name="q1_frequency" value="Рідко або ніколи">
+            <label for="q1_3">Рідко або ніколи</label>
+        </div>
+
+        <div class="question">
+            <p><strong>2. Які найбільші переваги віддаленої роботи? (Оберіть усі відповідні)</strong></p>
+            <input type="checkbox" id="q2_1" name="q2_benefits[]" value="Економія часу на дорогу">
+            <label for="q2_1">Економія часу на дорогу</label><br>
+            <input type="checkbox" id="q2_2" name="q2_benefits[]" value="Більша гнучкість графіку">
+            <label for="q2_2">Більша гнучкість графіку</label><br>
+            <input type="checkbox" id="q2_3" name="q2_benefits[]" value="Комфорт домашньої обстановки">
+            <label for="q2_3">Комфорт домашньої обстановки</label>
+        </div>
+
+        <div class="question">
+            <label for="q3_text"><strong>3. Що, на вашу думку, є найбільшим викликом при віддаленій роботі?</strong></label>
+            <input type="text" id="q3_text" name="q3_challenge" required>
+        </div>
+
+        <input type="submit" value="Надіслати Анкету">
+    </form>
+</body>
+</html>
